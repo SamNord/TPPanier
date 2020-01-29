@@ -5,8 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP_Panier"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="627" Width="1129">
+    <Grid Margin="0,0,0,-8" Background="Beige">
+        <Label Content="Ajouter un client" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="240"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="70,74,0,0" TextWrapping="Wrap" Text="{Binding Lastname}" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Prénom :" HorizontalAlignment="Left" Margin="170,74,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="245,74,0,0" TextWrapping="Wrap" Text="{Binding Firstname}" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Phone :" HorizontalAlignment="Left" Margin="370,74,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="445,74,0,0" TextWrapping="Wrap" Text="{Binding Phone}" VerticalAlignment="Top" Width="90"/>
+        <Button Content="Ajouter" Click="AddClient" HorizontalAlignment="Left" Margin="555,74,0,0" VerticalAlignment="Top" Width="95" Height="26"/>
+        <Label Content="Rechercher un produit" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="215"/>
+        <Label Content="Numero produit :" HorizontalAlignment="Left" Margin="15,179,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="135,182,0,0" TextWrapping="Wrap" Text="{Binding Phone}" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.944,0.696"/>
+        <Button Content="Search" Click="SearchClient" HorizontalAlignment="Left" Margin="215,182,0,0" VerticalAlignment="Top" Width="95" Height="26"/>
+        <ListView HorizontalAlignment="Left" Height="65" Margin="15,240,0,0" VerticalAlignment="Top" Width="235">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Numéro" Width="50" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Label" Width="100" DisplayMemberBinding="{Binding Label}"/>
+                    <GridViewColumn Header="Prix" Width="80" DisplayMemberBinding="{Binding Price}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Click="AddInBasket" Content="Ajouter dans panier" HorizontalAlignment="Left" Margin="20,324,0,0" VerticalAlignment="Top" Width="230" Height="26"/>
+        <DataGrid AutoGenerateColumns="False" x:Name="listeEmailsListBox" HorizontalAlignment="Left" Height="117" Margin="15,388,0,0" VerticalAlignment="Top" Width="275">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="100" Header="Label" Binding="{Binding Label}"/>
+                <DataGridTextColumn Width="100" Header="Prix" Binding="{Binding Price}"/>
+                <DataGridTextColumn Width="100" Header="Quantite" Binding="{Binding Quantite}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Valider" Click="ValiderPanier" HorizontalAlignment="Left" Margin="20,535,0,0" VerticalAlignment="Top" Width="145" Height="26"/>
+        <Label Content="Liste clients" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="760,25,0,0" VerticalAlignment="Top" Width="240"/>
+        <ListView HorizontalAlignment="Left" Height="76" Margin="705,74,0,0" VerticalAlignment="Top" Width="295">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom}"/>
+                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Phone}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Ajouter un produit" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="370,135,0,0" VerticalAlignment="Top" Width="215"/>
+        <Button Content="Ajouter Produit" Click="AddProductInBDD" HorizontalAlignment="Left" Margin="370,182,0,0" VerticalAlignment="Top" Width="145" Height="26"/>
+        <Button Click="DeleteClient" Content="Réinitialisation Client" Background="Red" HorizontalAlignment="Left" Margin="325,559,0,0" VerticalAlignment="Top" Width="170"/>
+        <Button Click="DeleteProduit" Content="Réinitialisation Produit" Background="Red" HorizontalAlignment="Left" Margin="520,559,0,0" VerticalAlignment="Top" Width="170"/>
+        <Button Click="DeletePanier" Content="Réinitialisation Panier" Background="Red" HorizontalAlignment="Left" Margin="705,559,0,0" VerticalAlignment="Top" Width="170"/>
+        <Button Click="DeleteProduitPanier" Content="Réinitialisation ProdPanier" Background="Red" HorizontalAlignment="Left" Margin="886,559,0,0" VerticalAlignment="Top" Width="170"/>
     </Grid>
 </Window>

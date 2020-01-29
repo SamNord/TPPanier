@@ -117,7 +117,7 @@ namespace TP_Panier.Models
         {
             command = new SqlCommand("TRUNCATE Table produit", Configuration.connection);
             Configuration.connection.Open();
-            command.ExecuteNonQuery();         
+            command.ExecuteNonQuery();
             command.Dispose();
             Configuration.connection.Close();
         }

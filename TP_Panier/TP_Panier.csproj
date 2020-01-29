@@ -71,6 +71,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Panier.cs" />
     <Compile Include="ViewModels\AddProductView.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\AddProduct.xaml.cs">
