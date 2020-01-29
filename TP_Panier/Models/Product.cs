@@ -94,5 +94,20 @@ namespace TP_Panier.Models
             Configuration.connection.Close();
             return result;
         }
+
+        public bool Delete()
+        {
+            bool result = false;
+            command = new SqlCommand("DELETE FROM Produit WHERE id = @id", Configuration.connection);
+            command.Parameters.Add(new SqlParameter("@id", Id));
+            Configuration.connection.Open();
+            if (command.ExecuteNonQuery() >0)
+            {
+                result = true;
+            }
+            command.Dispose();
+            Configuration.connection.Close();
+            return result;
+        }
     }
 }
