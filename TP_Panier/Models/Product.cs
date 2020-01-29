@@ -33,6 +33,7 @@ namespace TP_Panier.Models
             return Id >0;
         }
 
+        //pour afficher les produits présents dans la table produit
         public static List<Product> SeeProducts()
         {
             List<Product> products = new List<Product>();
@@ -55,5 +56,43 @@ namespace TP_Panier.Models
             return products;
         }
 
+        public static Product SearchProduct(int idProduit)
+        {
+            Product product = null;
+            command = new SqlCommand("SELECT label, prix FROM produit WHERE id= idP", Configuration.connection);
+            command.Parameters.Add(new SqlParameter("@idP", idProduit));
+            Configuration.connection.Open();
+            reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                product = new Product()
+                {
+                    Id =idProduit,
+                    Label = reader.GetString(0),
+                    Price = reader.GetDecimal(1),
+                };
+            }
+            reader.Close();
+            command.Dispose();
+            Configuration.connection.Close();
+            return product;
+        }
+
+        public bool Update()
+        {
+            bool result = false;
+            command = new SqlCommand("Update Produit set label=@lab, prix=@prix WHERE id=@id", Configuration.connection);
+            command.Parameters.Add(new SqlParameter("@lab", Label));
+            command.Parameters.Add(new SqlParameter("@prix", Price));
+            command.Parameters.Add(new SqlParameter("@id", Id));
+            Configuration.connection.Open();
+            if(command.ExecuteNonQuery() >0)
+            {
+                result = true;
+            }
+            command.Dispose();
+            Configuration.connection.Close();
+            return result;
+        }
     }
 }
