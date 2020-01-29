@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP_Panier.Models
 {
-    public class Client
+    public class Customer
     {
     }
 }
