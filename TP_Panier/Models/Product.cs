@@ -22,7 +22,15 @@ namespace TP_Panier.Models
 
         public Product() { }
 
-     
-        
+        public bool Save()
+        {
+            bool result = false;
+            command = new SqlCommand("INSERT INTO produit (label, prix) OUTPUT INSERTED.ID Values(@label, @prix)", connection);
+            command.Parameters.Add(new SqlParameter("@label", Label));
+            command.Parameters.Add(new SqlParameter("@prix", Price));
+            
+            return result;
+        }
+
     }
 }
