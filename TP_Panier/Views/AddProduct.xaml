@@ -12,7 +12,7 @@
         <Label Content="Prix" HorizontalAlignment="Left" Margin="30,135,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
         <TextBox Text="{Binding Price}" HorizontalAlignment="Left" Height="30" Margin="205,135,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Button Background="Brown" Foreground="White" FontSize="15" FontWeight="Bold" Content="Ajouter produit" HorizontalAlignment="Left" Margin="30,181,0,0" VerticalAlignment="Top" Width="295" Height="35" Click="AjouterProduct"/>
-        <Button Content="Réinitialisation table produit" Background="Red" HorizontalAlignment="Left" Margin="0,441,0,0" VerticalAlignment="Top" Width="200" Click="DeleteTableProduit"/>
+        <Button Content="Réinitialisation table produit" Background="Red" HorizontalAlignment="Left" Margin="570,441,0,0" VerticalAlignment="Top" Width="200" Click="DeleteTableProduit"/>
         <Label Content="Ajouter un produit" Foreground="Brown" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="295"/>
         <Label Content="Liste des produits" Foreground="Brown" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Margin="435,30,0,0" VerticalAlignment="Top" Width="295"/>
         <ListView ItemsSource="{Binding ListProducts}" HorizontalAlignment="Left" Height="120" Margin="435,85,0,0" VerticalAlignment="Top" Width="295">
