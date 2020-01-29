@@ -10,7 +10,6 @@ namespace TP_Panier.Models
     class Basket
     {
         private int id;
-        private Customer customer;
         private decimal total;
         private int customerId;
         private List<Product> products;
@@ -19,13 +18,13 @@ namespace TP_Panier.Models
         public int Id { get => id; set => id = value; }
         public decimal Total { get => total; set => total = value; }
         public List<Product> Products { get => products; set => products = value; }
-        public Customer Customer { get => customer; set => customer = value; }
+        
         public int CustomerId { get => customerId; set => customerId = value; }
 
         public Basket()
         {
             Products = new List<Product>();
-            Customer = new Customer();
+          
         }
 
         public void Save()
@@ -36,9 +35,9 @@ namespace TP_Panier.Models
                 total += product.Price;
             });
             command = new SqlCommand("INSERT INTO Panier (client_id, total) OUTPUT INSERTED.ID values(@client_id, @total)", Configuration.Connection);
-            command.Parameters.Add(new SqlParameter("@name", CustomerId));
+            command.Parameters.Add(new SqlParameter("@client_id", CustomerId));
             command.Parameters.Add(new SqlParameter("@total", Total));
-            Configuration.Connection.Open();
+            Configuration.connection.Open();
             Id = (int)command.ExecuteScalar();
             if (Id > 0)
             {
@@ -52,8 +51,32 @@ namespace TP_Panier.Models
                     command.Dispose();
                 });
             }
-            Configuration.Connection.Close();
+            Configuration.connection.Close();
         }
-
+        
+        public static Basket GetBasketById(int id)
+        {
+            Basket basket = null;
+            string request = "SELECT p.id as panier_id, p.total, pr.id as produit_id, pr.label, pr.prix " +
+                           "FROM panier as p " +
+                           "left join panier_produit as pp on p.id = pp.panier_id " +
+                           "left join produit as pr on pr.id = pp.produit_id " +
+                           "where p.id = @id";
+            command = new SqlCommand(request, Configuration.connection);
+            command.Parameters.Add(new SqlParameter("@id", id));
+            Configuration.connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            basket = new Basket();
+            basket.Id = id;
+            while (reader.Read())
+            {
+               
+                basket.total = reader.GetDecimal(2);
+                basket.Products.Add(new Product { Id = reader.GetInt32(4), Label = reader.GetString(5), Price = reader.GetDecimal(6) });
+            }
+            command.Dispose();
+            Configuration.connection.Close();
+            return basket;
+        }
     }
 }
