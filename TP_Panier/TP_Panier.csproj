@@ -70,6 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="ViewModels\AddProductView.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
