@@ -78,5 +78,10 @@ namespace TP_Panier.Models
             Configuration.connection.Close();
             return basket;
         }
+
+        public override string ToString()
+        {
+            return $"Client : {CustomerId},  Total : {Total}";
+        }
     }
 }
