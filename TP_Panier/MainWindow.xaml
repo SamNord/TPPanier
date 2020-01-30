@@ -16,17 +16,17 @@
         <TextBox x:Name="customer_firstname" HorizontalAlignment="Left" Height="37" Margin="184,123,0,0" TextWrapping="Wrap" Text="{Binding FirstName}" VerticalAlignment="Top" Width="212" FontSize="20" />
         <Label Content="Téléphone :" HorizontalAlignment="Left" Margin="24,178,0,0" VerticalAlignment="Top" FontSize="20" Width="126"/>
         <TextBox x:Name="customer_phone" HorizontalAlignment="Left" Height="37" Margin="184,178,0,0" TextWrapping="Wrap" Text="{Binding PhoneNumber}" VerticalAlignment="Top" Width="212" FontSize="20"/>
-        <Button Content="Ajouter Client" HorizontalAlignment="Left" Margin="184,236,0,0" VerticalAlignment="Top" Width="212" FontSize="20" Click="AddCustomer"/>
+        <Button Click="AddCustomer" Content="Ajouter Client" HorizontalAlignment="Left" Margin="184,236,0,0" VerticalAlignment="Top" Width="212" FontSize="20"/>
         <GridSplitter HorizontalAlignment="Center" Height="307" Margin="0" VerticalAlignment="Top" Width="5"/>
         <Label Content="Connexion Client" HorizontalAlignment="Left" Margin="510,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
         <Label Content="Identifiant :&#xD;&#xA;" HorizontalAlignment="Left" Margin="460,97,0,0" VerticalAlignment="Top" FontSize="20" Height="37"/>
-        <TextBox Text="{Binding IdClient}"  HorizontalAlignment="Left" Height="37" Margin="588,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" FontSize="20" RenderTransformOrigin="0.566,-0.284"/>
-        <Button Content="Connexion" HorizontalAlignment="Left" Margin="460,177,0,0" VerticalAlignment="Top" Width="340" FontSize="20" Height="89"/>
+        <TextBox Text="{Binding IdCustomer}"  HorizontalAlignment="Left" Height="37" Margin="588,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" FontSize="20" RenderTransformOrigin="0.566,-0.284"/>
+        <Button Click="ConnectingCusto" Content="Connexion" HorizontalAlignment="Left" Margin="460,177,0,0" VerticalAlignment="Top" Width="340" FontSize="20" Height="89"/>
         <GridSplitter HorizontalAlignment="Left" Height="5" Margin="0,302,0,0" VerticalAlignment="Top" Width="830"/>
         <Label Content="Connexion Admin" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Center" Height="37" Margin="314,398,314,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20"/>
-        <TextBox HorizontalAlignment="Center" Height="37" Margin="314,455,314,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20"/>
-        <Button Content="Connexion" HorizontalAlignment="Center" Margin="0,513,0,-2" VerticalAlignment="Top" Width="350" FontSize="20" Height="86"/>
+        <TextBox Text="{Binding IdentifiantAdmin}" HorizontalAlignment="Center" Height="37" Margin="314,398,312.8,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" FontSize="20"/>
+        <TextBox Text="{Binding PassAdmin}" HorizontalAlignment="Center" Height="37" Margin="314,455,314,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" FontSize="20"/>
+        <Button Click="ConnectingAdmin" Content="Connexion" HorizontalAlignment="Center" Margin="0,513,0,-2" VerticalAlignment="Top" Width="350" FontSize="20" Height="86"/>
 
 
     </Grid>

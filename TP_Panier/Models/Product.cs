@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,28 @@ namespace TP_Panier.Models
         }
 
         //pour afficher les produits présents dans la table produit
+        public static ObservableCollection<Product> GetAllProducts()
+        {
+            ObservableCollection<Product> products = new ObservableCollection<Product>();
+            command = new SqlCommand("Select * FROM produit", Configuration.connection);
+            Configuration.connection.Open();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Product product = new Product()
+                {
+                    Id = reader.GetInt32(0),
+                    Label = reader.GetString(1),
+                    Price = reader.GetDecimal(2)
+                };
+                products.Add(product);
+            }
+            reader.Close();
+            command.Dispose();
+            Configuration.connection.Close();
+            return products;
+        }
+
         public static List<Product> SeeProducts()
         {
             List<Product> products = new List<Product>();

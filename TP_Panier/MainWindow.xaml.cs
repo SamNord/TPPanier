@@ -34,16 +34,28 @@ namespace TP_Panier
             DataContext = new MainViewModel();
         }
 
-
-
-        private void AddClient(object sender, RoutedEventArgs e)
+        private void AddCustomer(object sender, RoutedEventArgs e)
         {
             MainViewModel main = DataContext as MainViewModel;
+
             if (main.Customer.Save())
             {
-                MessageBox.Show("client ajouté avec le numéro " + main.Customer.Id);
+                MessageBox.Show("Client ajouté avec le numéro " + main.Customer.Id);
+            }
+            else
+            {
+                MessageBox.Show("Erreur serveur");
             }
         }
+
+        //private void AddClient(object sender, RoutedEventArgs e)
+        //{
+        //    MainViewModel main = DataContext as MainViewModel;
+        //    if (main.Customer.Save())
+        //    {
+        //        MessageBox.Show("client ajouté avec le numéro " + main.Customer.Id);
+        //    }
+        //}
 
         private void SearchClient(object sender, RoutedEventArgs e)
         {
@@ -53,8 +65,8 @@ namespace TP_Panier
         private void AddInBasket(object sender, RoutedEventArgs e)
         {
             MainViewModel main = DataContext as MainViewModel;
-            main.Produit = Product.SearchProduct(main.Produit.Id);
-            main.ListProductPanier.Add(main.Produit);
+            main.Product = Product.SearchProduct(main.Product.Id);
+            main.ListProductPanier.Add(main.Product);
             main.CalculTotal();
 
         }
@@ -72,8 +84,14 @@ namespace TP_Panier
             {
                 MessageBox.Show("erreur");
             }
+        }
 
-
+        private void ConnectingCusto(object sender, RoutedEventArgs e)
+        {
+            MainViewModel main = DataContext as MainViewModel;
+            main.Customer = Customer.GetCustomerById(main.Customer.Id);
+            PanierView panierWindow = new PanierView(main.Customer);
+            panierWindow.Show();
         }
 
         private void AddProductInBDD(object sender, RoutedEventArgs e)
@@ -82,21 +100,22 @@ namespace TP_Panier
             addProductWindow.Show();
         }
 
-        private void SearchProduct(object sender, RoutedEventArgs e)
+
+        private void ConnectingAdmin(object sender, RoutedEventArgs e)
         {
             MainViewModel main = DataContext as MainViewModel;
-            main.Produit = Product.SearchProduct(main.Produit.Id);
-            if(main.Produit != null)
+            if(main.IdentifiantAdmin == "killerTeam" && main.PassAdmin == "admin")
             {
-                MessageBox.Show("ok");
-            }  
+
+                AddProduct addProductWindow = new AddProduct();
+                addProductWindow.Show();
+            }
+
             else
             {
-                MessageBox.Show("produit non  trouvé");
-                main.Produit = new Product();
+                MessageBox.Show("T'as pas le droit ! Pas bien !");
             }
         }
-
 
         /***********************Réinitialisation des tables*************
          ***************************************************************/
@@ -135,22 +154,6 @@ namespace TP_Panier
             command.ExecuteNonQuery();
             command.Dispose();
             Configuration.connection.Close();
-        }
-
-
-
-        private void AddCustomer(object sender, RoutedEventArgs e)
-        {
-            MainViewModel main = DataContext as MainViewModel;
-
-            if (main.Customer.Save())
-            {
-                MessageBox.Show("Client ajouté avec le numéro " + main.Customer.Id);
-            }
-            else
-            {
-                MessageBox.Show("Erreur serveur");
-            }
         }
 
 

@@ -34,41 +34,34 @@ namespace TP_Panier.Views
             if (v.Produit.Save())
             {
                 MessageBox.Show("produit ajouté avec numéro " + v.Produit.Id);
+                v.SeeAllProduct();
             }
 
         }
 
-        private void SearchProduct(object sender, RoutedEventArgs e)
+        private void DeleteProductSelected(object sender, RoutedEventArgs e)
         {
-            /*ici en commentaire --> echec donc j'ai du utilisé les noms des textBox ->voir fenetre AddProduct*/
-            //AddProductView v = DataContext as AddProductView;
-            //v.Produit = Product.SearchProduct(v.NumeroProduit);
-            //v.LabelEdit = v.Produit.Label;
-            //v.PrixEdit = v.Produit.Price;
-            int id = Int32.Parse(numero.Text);
-            product = Product.SearchProduct(id);
-            if (product != null)
+            AddProductView v = DataContext as AddProductView;
+            if(v.DeleteProduct())
             {
-                label.Text = product.Label;
-                prix.Text = product.Price.ToString();
+                MessageBox.Show("Produit supprimé");
+                v.SeeAllProduct();
             }
+            else
+            {
+                MessageBox.Show("Erreur inconnue");
 
+            }
         }
 
-        private void UpdateProduct(object sender, RoutedEventArgs e)
+        private void UpdateProductSelected(object sender, RoutedEventArgs e)
         {
-            product = new Product()
-            {
-                Id = Int32.Parse(numero.Text),
-                Label = label.Text,
-                Price = Decimal.Parse(prix.Text)
-            };
-            if (product.Update())
-            {
-                MessageBox.Show("Produit modifié");
-            }
+            AddProductView v = DataContext as AddProductView;
+            v.ProductSelected = v.Produit;
+            UpdateProductView produitUpdate = new UpdateProductView(v.ProductSelected);
+            produitUpdate.Show();
+            //MessageBox.Show($"Label : {v.ProductSelected.Label}, Prix : {v.ProductSelected.Price}€");
         }
-
 
         //bouton de réinitialisation de la table produit
         private void DeleteTableProduit(object sender, RoutedEventArgs e)
@@ -77,18 +70,6 @@ namespace TP_Panier.Views
             MessageBox.Show("table produit réinitialisée");
         }
 
-        private void DeleteProduct(object sender, RoutedEventArgs e)
-        {
-            product = new Product()
-            {
-                Id = Int32.Parse(numero.Text),
-                Label = label.Text,
-                Price = Decimal.Parse(prix.Text)
-            };
-            if (product.Delete())
-            {
-                MessageBox.Show("Produit supprimé");
-            }
-        }
+
     }
 }

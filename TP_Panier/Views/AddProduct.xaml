@@ -8,32 +8,24 @@
         Title="Ajouter un produit" Height="502" Width="800">
     <Grid Background="Beige">
         <Label Content="Label" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
-        <TextBox Text="{Binding Label}" HorizontalAlignment="Left" Height="30" Margin="205,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label Content="Prix" HorizontalAlignment="Left" Margin="30,135,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
-        <TextBox Text="{Binding Price}" HorizontalAlignment="Left" Height="30" Margin="205,135,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button Background="Brown" Foreground="White" FontSize="15" FontWeight="Bold" Content="Ajouter produit" HorizontalAlignment="Left" Margin="30,181,0,0" VerticalAlignment="Top" Width="295" Height="35" Click="AjouterProduct"/>
+        <TextBox Text="{Binding Label}" HorizontalAlignment="Left" Height="35" Margin="160,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Prix" HorizontalAlignment="Left" Margin="320,85,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
+        <TextBox Text="{Binding Price}" HorizontalAlignment="Left" Height="35" Margin="395,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button Background="Brown" Foreground="White" FontSize="15" FontWeight="Bold" Content="Ajouter" HorizontalAlignment="Left" Margin="570,79,0,0" VerticalAlignment="Top" Width="145" Height="35" Click="AjouterProduct"/>
         <Button Content="Réinitialisation table produit" Background="Red" HorizontalAlignment="Left" Margin="570,441,0,0" VerticalAlignment="Top" Width="200" Click="DeleteTableProduit"/>
         <Label Content="Ajouter un produit" Foreground="Brown" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="295"/>
-        <Label Content="Liste des produits" Foreground="Brown" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Margin="435,30,0,0" VerticalAlignment="Top" Width="295"/>
-        <ListView ItemsSource="{Binding ListProducts}" HorizontalAlignment="Left" Height="120" Margin="435,85,0,0" VerticalAlignment="Top" Width="295">
+        <Label Content="Liste des produits" Foreground="Brown" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="295"/>
+        <ListView ItemsSource="{Binding ListProducts}" SelectedItem = "{Binding ProductSelected}"  HorizontalAlignment="Left" Height="155" Margin="30,255,0,0" VerticalAlignment="Top" Width="400">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Numéro" DisplayMemberBinding="{Binding Id}" Width="100"/>
-                    <GridViewColumn Header="Label" Width="100" DisplayMemberBinding="{Binding Label}"/>
-                    <GridViewColumn Header="Prix" Width="100" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn Header="Label" Width="150" DisplayMemberBinding="{Binding Label}"/>
+                    <GridViewColumn Header="Prix" Width="150" DisplayMemberBinding="{Binding Price}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Modifier ou supprimer un produit" Foreground="Brown" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" Width="345"/>
-        <Label Content="Id du produit à modifier" HorizontalAlignment="Left" Margin="10,278,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
-        <TextBox x:Name="numero" Text="{Binding NumeroProduit}" HorizontalAlignment="Left" Height="30" Margin="155,278,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="45"/>
-        <Button Click="SearchProduct" Content="Details Product" Background="CadetBlue" Foreground="White" FontSize="13" FontWeight="Bold" HorizontalAlignment="Left" Margin="225,278,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.133,0.85" Height="30"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="30,330,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
-        <TextBox x:Name="label" Text="{Binding LabelEdit}" HorizontalAlignment="Left" Height="30" Margin="205,330,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label Content="Prix" HorizontalAlignment="Left" Margin="30,365,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
-        <TextBox x:Name="prix" Text="{Binding PrixEdit}" HorizontalAlignment="Left" Height="30" Margin="205,365,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button Click="UpdateProduct" Content="Modifier" Background="ForestGreen" Foreground="White" FontSize="13" FontWeight="Bold" HorizontalAlignment="Left" Margin="30,400,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.133,0.85" Height="30"/>
-        <Button Click="DeleteProduct" Content="Supprimer" Background="DarkRed" Foreground="White" FontSize="13" FontWeight="Bold" HorizontalAlignment="Left" Margin="205,400,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.133,0.85" Height="30"/>
+        <Button Click="UpdateProductSelected" Content="Modifier" Background="CadetBlue" Foreground="White" FontSize="13" FontWeight="Bold" Margin="465,280,227,0" VerticalAlignment="Top" RenderTransformOrigin="0.133,0.85" Height="30"/>
+        <Button Click="DeleteProductSelected" Content="Supprimer" Background="Red" Foreground="White" FontSize="13" FontWeight="Bold" Margin="465,355,227,0" VerticalAlignment="Top" RenderTransformOrigin="0.133,0.85" Height="30"/>
 
     </Grid>
 </Window>

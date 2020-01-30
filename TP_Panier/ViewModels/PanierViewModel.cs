@@ -1,12 +1,8 @@
-
+﻿using GalaSoft.MvvmLight;
 using System;
 using System.Collections.Generic;
-
-using GalaSoft.MvvmLight;
-
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
-
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,38 +10,33 @@ using TP_Panier.Models;
 
 namespace TP_Panier.ViewModels
 {
-
-
-    public class MainViewModel : ViewModelBase
+    public class PanierViewModel : ViewModelBase
     {
-        private Customer customer;
-        private Product product;
+        private Product produit;
         private Basket panier;
-        private SqlCommand command;
+        private Customer customer;
         private ObservableCollection<Product> listProductPanier;
-        private string identifiantAdmin;
-        private string passAdmin;
+        public static SqlCommand command;
 
-        public MainViewModel()
+
+        public PanierViewModel()
         {
-            customer = new Customer();
+            produit = new Product();
             panier = new Basket();
-            product = new Product();
+            customer = new Customer();
             ListProductPanier = new ObservableCollection<Product>();
         }
 
-        public int IdCustomer { get => customer.Id; set => customer.Id = value; }
-        public string FirstName { get => customer.Firstname; set => customer.Firstname = value; }
-        public string LastName { get => customer.Lastname; set => customer.Lastname = value; }
-        public string PhoneNumber { get => customer.PhoneNumber; set => customer.PhoneNumber = value; }
+        public int IdCusto { get => customer.Id; set => customer.Id = value; }
+        public string Lastname { get => customer.Lastname; set => customer.Lastname = value; }
+        public string Firstname { get => customer.Firstname; set => customer.Firstname = value; }
+        public string Phone { get => customer.PhoneNumber; set => customer.PhoneNumber = value; }
         public Customer Customer { get => customer; set => customer = value; }
 
-        public int IdProduct { get => product.Id; set => product.Id = value; }
-        public string Label { get => product.Label; set => product.Label = value; }
-        public decimal Price { get => product.Price; set => product.Price = value; }
-        public Product Product { get => product; set => product = value; }
-
-        public ObservableCollection<Product> ListProductPanier { get => listProductPanier; set { listProductPanier = value; RaisePropertyChanged(); } }
+        public int IdProduit { get => produit.Id; set => produit.Id = value; }
+        public string Label { get => produit.Label; set => produit.Label = value; }
+        public decimal Price { get => produit.Price; set => produit.Price = value; }
+        public Product Produit { get => produit; set { produit = value; RaisePropertyChanged(); } }
 
         public Basket Panier { get => panier; set { panier = value; RaisePropertyChanged(); } }
         public int IdPanier { get => panier.Id; set => panier.Id = value; }
@@ -54,8 +45,17 @@ namespace TP_Panier.ViewModels
         {
             get => panier.Total;
         }
-        public string IdentifiantAdmin { get => identifiantAdmin; set { identifiantAdmin = value; RaisePropertyChanged(); } }
-        public string PassAdmin { get => passAdmin; set { passAdmin = value; RaisePropertyChanged(); } }
+
+        public ObservableCollection<Product> ListProductPanier 
+        { 
+            get => listProductPanier; 
+            set 
+            { 
+                listProductPanier = value; RaisePropertyChanged();
+            }
+        }
+
+
 
         public void CalculTotal()
         {
@@ -71,41 +71,40 @@ namespace TP_Panier.ViewModels
         public bool ValiderPanier()
         {
             bool res = false;
-            Customer c = Customer.GetCustomerById(IdCustomer);
+            Customer c = Customer.GetCustomerById(IdCusto);
             panier = new Basket()
             {
                 Id = IdPanier,
-                CustomerId = c.Id,
+                CustomerId = IdCusto,
                 Total = Total
             };
             if (panier.Save2())
             {
                 res = true;
                 SaveInPanierProduit();
+                RaisePropertyChanged("Panier");
             }
+
             return res;
         }
 
-        //public void DefineAccesAdmin(string identifiant, string pass)
+        //public string ShowMessenger(string message)
         //{
-        //    identifiant = IdentifiantAdmin;
-        //    pass = PassAdmin;
-        //    RaisePropertyChanged("IdentifiantAdmin");
-        //    RaisePropertyChanged("PassAdmin");
+        //    message = Message;
+        //    RaisePropertyChanged("Message");
+        //    return message;
         //}
 
         public void SaveInPanierProduit()
         {
             command = new SqlCommand("INSERT INTO PanierProduit (panier_id, produit_id) Values (@idPanier, @idProduit)", Configuration.connection);
             command.Parameters.Add(new SqlParameter("@idPanier", IdPanier));
-            command.Parameters.Add(new SqlParameter("@idProduit", IdProduct));
+            command.Parameters.Add(new SqlParameter("@idProduit", IdProduit));
             Configuration.connection.Open();
             command.ExecuteNonQuery();
             command.Dispose();
             Configuration.connection.Close();
 
         }
-
     }
 }
-
