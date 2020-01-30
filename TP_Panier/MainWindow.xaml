@@ -18,7 +18,7 @@
         <Label Content="Rechercher un produit" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="215"/>
         <Label Content="Numero produit :" HorizontalAlignment="Left" Margin="15,179,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="135,182,0,0" TextWrapping="Wrap" Text="{Binding Phone}" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.944,0.696"/>
-        <Button Content="Search" Click="SearchClient" HorizontalAlignment="Left" Margin="215,182,0,0" VerticalAlignment="Top" Width="95" Height="26"/>
+        <Button Content="Search" Click="SearchProduct" HorizontalAlignment="Left" Margin="215,182,0,0" VerticalAlignment="Top" Width="95" Height="26"/>
         <ListView HorizontalAlignment="Left" Height="65" Margin="15,240,0,0" VerticalAlignment="Top" Width="235">
             <ListView.View>
                 <GridView>

@@ -36,7 +36,7 @@ namespace TP_Panier
         private void AddClient(object sender, RoutedEventArgs e)
         {
             MainViewModel main = DataContext as MainViewModel;
-            if(main.Customer.Save())
+            if (main.Customer.Save())
             {
                 MessageBox.Show("client ajouté avec le numéro " + main.Customer.Id);
             }
@@ -62,6 +62,14 @@ namespace TP_Panier
             AddProduct addProductWindow = new AddProduct();
             addProductWindow.Show();
         }
+
+        private void SearchProduct(object sender, RoutedEventArgs e)
+        {
+            MainViewModel main = DataContext as MainViewModel;
+            main.Produit = Product.SearchProduct(main.Produit.Id);
+        
+        }
+
 
         /***********************Réinitialisation des tables*************
          ***************************************************************/
@@ -100,6 +108,8 @@ namespace TP_Panier
             command.ExecuteNonQuery();
             command.Dispose();
             Configuration.connection.Close();
-        }   
+        }
+
+
     }
 }
