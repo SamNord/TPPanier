@@ -34,7 +34,7 @@ namespace TP_Panier.Models
             {
                 total += product.Price;
             });
-            command = new SqlCommand("INSERT INTO Panier (client_id, total) OUTPUT INSERTED.ID values(@client_id, @total)", Configuration.Connection);
+            command = new SqlCommand("INSERT INTO Panier (client_id, total) OUTPUT INSERTED.ID values(@client_id, @total)", Configuration.connection);
             command.Parameters.Add(new SqlParameter("@client_id", CustomerId));
             command.Parameters.Add(new SqlParameter("@total", Total));
             Configuration.connection.Open();
@@ -44,7 +44,7 @@ namespace TP_Panier.Models
                 command.Dispose();
                 Products.ForEach(product =>
                 {
-                    command = new SqlCommand("INSERT INTO PanierProduit (produit_id, panier_id) values(@produitId, @panierId)", Configuration.Connection);
+                    command = new SqlCommand("INSERT INTO PanierProduit (produit_id, panier_id) values(@produitId, @panierId)", Configuration.connection);
                     command.Parameters.Add(new SqlParameter("@produitId", product.Id));
                     command.Parameters.Add(new SqlParameter("@panierId", Id));
                     command.ExecuteNonQuery();
