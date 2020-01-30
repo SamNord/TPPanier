@@ -19,8 +19,8 @@
         <ListBox HorizontalAlignment="Left" Height="63" Margin="506,229,0,0" VerticalAlignment="Top" Width="243"/>
 
         <Label Content="Liste Produits" HorizontalAlignment="Left" Margin="323,336,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="bold" Width="202"/>
-        <Label Content="Produit" HorizontalAlignment="Left" Margin="117,422,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button Content="Ajouter Produit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="169" Margin="253,425,0,0" FontSize="20"/>
+        <Label Content="Produit" HorizontalAlignment="Left" Margin="76,425,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Ajouter Produit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="169" Margin="624,682,0,0" FontSize="20"/>
         <Button Content="Rechercher Produit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="470,425,0,0" FontSize="20"/>
         <ListView HorizontalAlignment="Left" Height="176" Margin="40,480,0,0" VerticalAlignment="Top" Width="753">
             <ListView.View>
@@ -44,7 +44,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Valider Commande" HorizontalAlignment="Left" Margin="291,997,0,0" VerticalAlignment="Top" Width="234" FontSize="20" Click="Button_Click"/>
+        <Button Content="Valider Commande" HorizontalAlignment="Left" Margin="291,1043,0,0" VerticalAlignment="Top" Width="234" FontSize="20" Click="Button_Click"/>
 
 
 
