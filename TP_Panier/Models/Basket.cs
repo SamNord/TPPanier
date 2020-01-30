@@ -57,10 +57,10 @@ namespace TP_Panier.Models
         public static Basket GetBasketById(int id)
         {
             Basket basket = null;
-            string request = "SELECT p.id as panier_id, p.total, pr.id as produit_id, pr.label, pr.prix " +
-                           "FROM panier as p " +
-                           "left join panier_produit as pp on p.id = pp.panier_id " +
-                           "left join produit as pr on pr.id = pp.produit_id " +
+            string request = "SELECT p.id as panier_id, p.client_id, p.total, pr.id as produit_id, pr.label, pr.prix " +
+                           "FROM Panier as p " +
+                           "left join PanierProduit as pp on p.id = pp.panier_id " +
+                           "left join Produit as pr on pr.id = pp.produit_id " +
                            "where p.id = @id";
             command = new SqlCommand(request, Configuration.connection);
             command.Parameters.Add(new SqlParameter("@id", id));
@@ -70,9 +70,9 @@ namespace TP_Panier.Models
             basket.Id = id;
             while (reader.Read())
             {
-               
+                basket.CustomerId = reader.GetInt32(1);             
                 basket.total = reader.GetDecimal(2);
-                basket.Products.Add(new Product { Id = reader.GetInt32(4), Label = reader.GetString(5), Price = reader.GetDecimal(6) });
+                basket.Products.Add(new Product { Id = reader.GetInt32(3), Label = reader.GetString(4), Price = reader.GetDecimal(5) });
             }
             command.Dispose();
             Configuration.connection.Close();
