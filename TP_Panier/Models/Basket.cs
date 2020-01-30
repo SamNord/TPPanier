@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace TP_Panier.Models
 {
+
     public class Basket
+
     {
         private int id;
         private decimal total;
@@ -24,7 +26,6 @@ namespace TP_Panier.Models
         public Basket()
         {
             Products = new List<Product>();
-
         }
 
         public void Save()
@@ -54,6 +55,7 @@ namespace TP_Panier.Models
             Configuration.connection.Close();
         }
 
+
         public static Basket GetBasketById(int id)
         {
             Basket basket = null;
@@ -70,6 +72,7 @@ namespace TP_Panier.Models
             basket.Id = id;
             while (reader.Read())
             {
+
                 basket.CustomerId = reader.GetInt32(1);
                 basket.total = reader.GetDecimal(2);
                 basket.Products.Add(new Product { Id = reader.GetInt32(3), Label = reader.GetString(4), Price = reader.GetDecimal(5) });
@@ -79,9 +82,11 @@ namespace TP_Panier.Models
             return basket;
         }
 
+
         public override string ToString()
         {
             return $"Client : {CustomerId},  Total : {Total}";
         }
     }
 }
+

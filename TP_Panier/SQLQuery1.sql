@@ -1,4 +1,5 @@
 ﻿CREATE TABLE [dbo].[PanierProduit]
+
 (
     [Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
     [panier_id] INT NOT NULL, 
@@ -23,3 +24,4 @@ CREATE TABLE [dbo].[Client]
     [prenom] NVARCHAR(50) NOT NULL, 
     [telephone] NCHAR(10) NOT NULL
 )
+

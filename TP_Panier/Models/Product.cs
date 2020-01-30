@@ -110,6 +110,13 @@ namespace TP_Panier.Models
             return result;
         }
 
+        public override string ToString()
+        {
+            return $"Numéro : {Id}, Label : {Label}, Prix : {Price}";
+        }
+
+
+
 
         //pour effacer les données de la table produit en réinitialisant l'incrémentation
         //on appelle cette méthode dans le code de la fenêtre AddProduct bouton rouge
@@ -117,7 +124,7 @@ namespace TP_Panier.Models
         {
             command = new SqlCommand("TRUNCATE Table produit", Configuration.connection);
             Configuration.connection.Open();
-            command.ExecuteNonQuery();         
+            command.ExecuteNonQuery();
             command.Dispose();
             Configuration.connection.Close();
         }
