@@ -14,13 +14,13 @@
         <Label Content="Produits" HorizontalAlignment="Left" Height="32" Margin="10,64,0,0" VerticalAlignment="Top" Width="86" FontWeight="Bold" FontSize="15" Foreground="Black"/>
         <Label Content="Id Produit" HorizontalAlignment="Left" Height="27" Margin="498,67,0,0" VerticalAlignment="Top" Width="82" FontWeight="Bold" FontSize="15"/>
         <TextBox HorizontalAlignment="Left" Height="27" Margin="585,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61"/>
-        <Button Content="Envoyer" HorizontalAlignment="Left" Height="27" Margin="671,69,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click"/>
+        <Button Content="Envoyer" HorizontalAlignment="Left" Height="27" Margin="671,69,0,0" VerticalAlignment="Top" Width="113" Click="SearchProductById"/>
         <DataGrid HorizontalAlignment="Left" Height="72" Margin="10,109,0,0" VerticalAlignment="Top" Width="774" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="325" Header="Id Produit" Binding="{Binding Product}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Ajouter au panier" HorizontalAlignment="Left" Height="27" Margin="570,198,0,0" VerticalAlignment="Top" Width="214" Click="Button_Click_1"/>
+        <Button Content="Ajouter au panier" HorizontalAlignment="Left" Height="27" Margin="570,198,0,0" VerticalAlignment="Top" Width="214" Click="AddToBasket"/>
         <DataGrid HorizontalAlignment="Left" Height="137" Margin="10,247,0,0" VerticalAlignment="Top" Width="774" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Header="Désignation" Binding="{Binding Product}"/>
@@ -29,7 +29,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Total" HorizontalAlignment="Left" Height="27" Margin="517,401,0,0" VerticalAlignment="Top" Width="89" FontWeight="Bold" FontSize="15"/>
-        <Button Content="Commander" HorizontalAlignment="Left" Height="27" Margin="310,460,0,0" VerticalAlignment="Top" Width="214" Click="Button_Click_2"/>
+        <Button Content="Commander" HorizontalAlignment="Left" Height="27" Margin="310,460,0,0" VerticalAlignment="Top" Width="214" Click="Order"/>
         <Label Content="{Binding CustomerId}" HorizontalAlignment="Left" Height="27" Margin="135,10,0,0" VerticalAlignment="Top" Width="56"  BorderBrush="Silver" BorderThickness="1" Background="White"/>
         <Label Content="{Binding LastName}" HorizontalAlignment="Left" Height="27" Margin="248,10,0,0" VerticalAlignment="Top" Width="127"  BorderBrush="Silver" BorderThickness="1" Background="White"/>
         <Label Content="{Binding FirstName}" HorizontalAlignment="Left" Height="27" Margin="452,10,0,0" VerticalAlignment="Top" Width="127"  BorderBrush="Silver" BorderThickness="1" Background="White"/>
