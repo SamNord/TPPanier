@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TP_Panier.Models
 {
-    class Basket
+    public class Basket
     {
         private int id;
         private decimal total;
