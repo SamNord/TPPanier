@@ -122,5 +122,10 @@ namespace TP_Panier.Models
             Configuration.connection.Close();
             return customers;
         }
+
+        public override string ToString()
+        {
+            return $"Nom : {Lastname}, Prénom : {Firstname}, Téléphone : {Phone}";
+        }
     }
 }

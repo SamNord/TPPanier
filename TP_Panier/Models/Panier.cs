@@ -19,6 +19,7 @@ namespace TP_Panier.Models
         public Panier()
         {
             Products = new List<Product>();
+         
         }
 
         public int Id { get => id; set => id = value; }

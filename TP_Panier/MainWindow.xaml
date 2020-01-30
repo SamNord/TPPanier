@@ -19,40 +19,26 @@
         <Label Content="Numero produit :" HorizontalAlignment="Left" Margin="15,179,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBox Text="{Binding IdProduit}" HorizontalAlignment="Left" Height="23" Margin="135,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.944,0.696"/>
         <Button Content="Search" Click="SearchProduct" HorizontalAlignment="Left" Margin="215,182,0,0" VerticalAlignment="Top" Width="95" Height="26"/>
-        <ListView HorizontalAlignment="Left" Height="65" Margin="15,240,0,0" VerticalAlignment="Top" Width="235">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Numéro" Width="50" DisplayMemberBinding="{Binding Id}"/>
-                    <GridViewColumn Header="Label" Width="100" DisplayMemberBinding="{Binding Label}"/>
-                    <GridViewColumn Header="Prix" Width="80" DisplayMemberBinding="{Binding Price}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
         <Button Click="AddInBasket" Content="Ajouter dans panier" HorizontalAlignment="Left" Margin="20,324,0,0" VerticalAlignment="Top" Width="230" Height="26"/>
-        <DataGrid  AutoGenerateColumns="False" x:Name="listeEmailsListBox" HorizontalAlignment="Left" Height="117" Margin="15,388,0,0" VerticalAlignment="Top" Width="275">
+        <DataGrid ItemsSource="{Binding ListProductPanier}"  AutoGenerateColumns="False" x:Name="listeEmailsListBox" HorizontalAlignment="Left" Height="117" Margin="15,388,0,0" VerticalAlignment="Top" Width="185">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="100" Header="Label" Binding="{Binding Label}"/>
                 <DataGridTextColumn Width="100" Header="Prix" Binding="{Binding Price}"/>
-                <DataGridTextColumn Width="100" Header="Quantite" Binding="{Binding Quantite}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Valider" Click="ValiderPanier" HorizontalAlignment="Left" Margin="20,535,0,0" VerticalAlignment="Top" Width="145" Height="26"/>
-        <Label Content="Liste clients" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="760,25,0,0" VerticalAlignment="Top" Width="240"/>
-        <ListView HorizontalAlignment="Left" Height="76" Margin="705,74,0,0" VerticalAlignment="Top" Width="295">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom}"/>
-                    <GridViewColumn Header="Prénom" Width="100" DisplayMemberBinding="{Binding Prenom}"/>
-                    <GridViewColumn Header="Téléphone" Width="100" DisplayMemberBinding="{Binding Phone}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
         <Label Content="Ajouter un produit" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="370,135,0,0" VerticalAlignment="Top" Width="215"/>
         <Button Content="Ajouter Produit" Click="AddProductInBDD" HorizontalAlignment="Left" Margin="370,182,0,0" VerticalAlignment="Top" Width="145" Height="26"/>
         <Button Click="DeleteClient" Content="Réinitialisation Client" Background="Red" HorizontalAlignment="Left" Margin="325,559,0,0" VerticalAlignment="Top" Width="170"/>
         <Button Click="DeleteProduit" Content="Réinitialisation Produit" Background="Red" HorizontalAlignment="Left" Margin="520,559,0,0" VerticalAlignment="Top" Width="170"/>
         <Button Click="DeletePanier" Content="Réinitialisation Panier" Background="Red" HorizontalAlignment="Left" Margin="705,559,0,0" VerticalAlignment="Top" Width="170"/>
         <Button Click="DeleteProduitPanier" Content="Réinitialisation ProdPanier" Background="Red" HorizontalAlignment="Left" Margin="886,559,0,0" VerticalAlignment="Top" Width="170"/>
-        <Label Content="{Binding Produit}" HorizontalAlignment="Left" Margin="325,259,0,0" VerticalAlignment="Top" Width="305" Height="46" Background="AliceBlue"/>
+        <Label Content="{Binding Produit}" HorizontalAlignment="Left" Margin="20,225,0,0" VerticalAlignment="Top" Width="305" Height="46" Background="AliceBlue"/>
+        <Label Content="{Binding Total}" HorizontalAlignment="Left" Margin="300,479,0,0" VerticalAlignment="Top" Width="55" Height="26" Background="White" RenderTransformOrigin="1.087,0.8"/>
+        <Label Content="Total : " HorizontalAlignment="Left" Margin="215,479,0,0" VerticalAlignment="Top" Width="55" Height="26" Background="Beige" RenderTransformOrigin="1.087,0.8"/>
+        <TextBox Text="{Binding IdClient}" HorizontalAlignment="Left" Height="23" Margin="220,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.944,0.696"/>
+        <Label Content="Numero client :" HorizontalAlignment="Left" Margin="100,271,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="{Binding Total}" HorizontalAlignment="Left" Margin="300,479,0,0" VerticalAlignment="Top" Width="55" Height="26" Background="White" RenderTransformOrigin="1.087,0.8"/>
+        <Button Content="Rechercher un client" Click="SearchOneClient" HorizontalAlignment="Left" Margin="705,71,0,0" VerticalAlignment="Top" Width="235" Height="26"/>
     </Grid>
 </Window>

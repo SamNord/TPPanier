@@ -33,6 +33,8 @@ namespace TP_Panier
             DataContext = new MainViewModel();
         }
 
+
+
         private void AddClient(object sender, RoutedEventArgs e)
         {
             MainViewModel main = DataContext as MainViewModel;
@@ -49,11 +51,27 @@ namespace TP_Panier
 
         private void AddInBasket(object sender, RoutedEventArgs e)
         {
+            MainViewModel main = DataContext as MainViewModel;
+            main.Produit = Product.SearchProduct(main.Produit.Id);
+            main.ListProductPanier.Add(main.Produit);
+            main.CalculTotal();
 
         }
 
         private void ValiderPanier(object sender, RoutedEventArgs e)
         {
+            MainViewModel main = DataContext as MainViewModel;
+
+            if (main.ValiderPanier())
+            {
+                MessageBox.Show("panier validé, le total est de "+ main.Panier.Total + "€");
+            }
+
+            else
+            {
+                MessageBox.Show("erreur");
+            }
+
 
         }
 
@@ -67,7 +85,15 @@ namespace TP_Panier
         {
             MainViewModel main = DataContext as MainViewModel;
             main.Produit = Product.SearchProduct(main.Produit.Id);
-           
+            if(main.Produit != null)
+            {
+                MessageBox.Show("ok");
+            }  
+            else
+            {
+                MessageBox.Show("produit non  trouvé");
+
+            }
         }
 
 
@@ -110,6 +136,9 @@ namespace TP_Panier
             Configuration.connection.Close();
         }
 
+        private void SearchOneClient(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
