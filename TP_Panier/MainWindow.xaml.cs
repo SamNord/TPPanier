@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TP_Panier.Models;
+using TP_Panier.ViewModels;
 
 namespace TP_Panier
 {
@@ -23,8 +25,23 @@ namespace TP_Panier
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
 
-   
+        private void AddCustomer(object sender, RoutedEventArgs e)
+        {
+            MainViewModel main = DataContext as MainViewModel;
+
+            if (main.Customer.Save())
+            {
+                MessageBox.Show("Client ajouté avec le numéro " + main.Customer.Id);
+            }
+            else
+            {
+                MessageBox.Show("Erreur serveur");
+            }
+        }
+
+
     }
 }

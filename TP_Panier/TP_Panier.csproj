@@ -70,7 +70,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="ViewModels\AddProductView.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="Views\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>
@@ -92,10 +95,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
-
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
