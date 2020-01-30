@@ -5,46 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP_Panier"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1450" Width="850">
-    <Grid Margin="0,0,3.6,-20">
-        <Label Content="Saisie Information Client" HorizontalAlignment="Left" Margin="253,24,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <Label Content="Nom :" HorizontalAlignment="Left" Margin="53,121,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="232" FontSize="20"/>
-        <Label Content="Prénom :" HorizontalAlignment="Left" Margin="53,181,0,0" VerticalAlignment="Top" FontSize="20" Width="98"/>
-        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,185,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="232" FontSize="20"/>
-        <Label Content="Téléphone :" HorizontalAlignment="Left" Margin="53,241,0,0" VerticalAlignment="Top" FontSize="20" Width="126"/>
-        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,245,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="232" FontSize="20"/>
-        <Button Content="Ajouter Client" HorizontalAlignment="Left" Margin="506,122,0,0" VerticalAlignment="Top" Width="243" FontSize="20"/>
-        <Button Content="Rechercher Client Test" HorizontalAlignment="Left" Margin="506,170,0,0" VerticalAlignment="Top" Width="243" FontSize="20"/>
-        <ListBox HorizontalAlignment="Left" Height="63" Margin="506,229,0,0" VerticalAlignment="Top" Width="243"/>
-
-        <Label Content="Liste Produits" HorizontalAlignment="Left" Margin="323,336,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="bold" Width="202"/>
-        <Label Content="Produit" HorizontalAlignment="Left" Margin="117,422,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button Content="Ajouter Produit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="169" Margin="253,425,0,0" FontSize="20"/>
-        <Button Content="Rechercher Produit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="470,425,0,0" FontSize="20"/>
-        <ListView HorizontalAlignment="Left" Height="176" Margin="40,480,0,0" VerticalAlignment="Top" Width="753">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Label" Width="350" />
-                    <GridViewColumn Header="Prix" Width="350"/>
-
-
-                </GridView>
-            </ListView.View>
-        </ListView>
-
-        <Label Content="Panier du Client" HorizontalAlignment="Left" Margin="291,705,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="bold"/>
-        <ListView HorizontalAlignment="Left" Height="176" Margin="40,782,0,0" VerticalAlignment="Top" Width="753">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Label" Width="250" />
-                    <GridViewColumn Header="Prix" Width="250"/>
-                    <GridViewColumn Header="Quantité" Width="250"/>
-
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Content="Valider Commande" HorizontalAlignment="Left" Margin="291,997,0,0" VerticalAlignment="Top" Width="234" FontSize="20" Click="Button_Click"/>
+        Title="MainWindow" Height="662.8" Width="850">
+    
+    <Grid Margin="0,0,3.2,0" Height="691" VerticalAlignment="Top">
+        <Label Content="Nouveau client" HorizontalAlignment="Left" Margin="117,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Margin="24,74,0,0" VerticalAlignment="Top" FontSize="20" Height="37"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,74,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20"/>
+        <Label Content="Prénom :" HorizontalAlignment="Left" Margin="24,123,0,0" VerticalAlignment="Top" FontSize="20" Width="98" Height="37"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20"/>
+        <Label Content="Téléphone :" HorizontalAlignment="Left" Margin="24,178,0,0" VerticalAlignment="Top" FontSize="20" Width="126"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,178,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20"/>
+        <Button Content="Ajouter Client" HorizontalAlignment="Left" Margin="184,236,0,0" VerticalAlignment="Top" Width="212" FontSize="20"/>
+        <GridSplitter HorizontalAlignment="Center" Height="307" Margin="0" VerticalAlignment="Top" Width="5"/>
+        <Label Content="Connexion Client" HorizontalAlignment="Left" Margin="510,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Label Content="Identifiant :&#xD;&#xA;" HorizontalAlignment="Left" Margin="460,97,0,0" VerticalAlignment="Top" FontSize="20" Height="37"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="588,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20" RenderTransformOrigin="0.566,-0.284"/>
+        <Button Content="Connexion" HorizontalAlignment="Left" Margin="460,177,0,0" VerticalAlignment="Top" Width="340" FontSize="20" Height="89"/>
+        <GridSplitter HorizontalAlignment="Left" Height="5" Margin="0,302,0,0" VerticalAlignment="Top" Width="830"/>
+        <Label Content="Connexion Admin" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Center" Height="37" Margin="314,398,314,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20"/>
+        <TextBox HorizontalAlignment="Center" Height="37" Margin="314,455,314,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20"/>
+        <Button Content="Connexion" HorizontalAlignment="Center" Margin="0,513,0,-2" VerticalAlignment="Top" Width="350" FontSize="20" Height="86"/>
 
 
 
