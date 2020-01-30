@@ -67,7 +67,7 @@ namespace TP_Panier
         {
             MainViewModel main = DataContext as MainViewModel;
             main.Produit = Product.SearchProduct(main.Produit.Id);
-        
+           
         }
 
 

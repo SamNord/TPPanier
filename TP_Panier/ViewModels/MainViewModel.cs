@@ -28,7 +28,8 @@ namespace TP_Panier.ViewModels
         public int IdProduit { get => produit.Id; set => produit.Id = value; }
         public string Label { get => produit.Label; set => produit.Label = value; }
         public decimal Price { get => produit.Price; set => produit.Price = value; }
-        public Product Produit { get => produit; set => produit = value; }
+        public Product Produit { get => produit; set { produit = value; RaisePropertyChanged(); } }
+
 
     }
 }
