@@ -19,7 +19,7 @@
         <GridSplitter HorizontalAlignment="Center" Height="307" Margin="0" VerticalAlignment="Top" Width="5"/>
         <Label Content="Connexion Client" HorizontalAlignment="Left" Margin="510,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
         <Label Content="Identifiant :&#xD;&#xA;" HorizontalAlignment="Left" Margin="460,97,0,0" VerticalAlignment="Top" FontSize="20" Height="37"/>
-        <TextBox HorizontalAlignment="Left" Height="37" Margin="588,97,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="212" FontSize="20" RenderTransformOrigin="0.566,-0.284"/>
+        <TextBox Text="{Binding IdClient}"  HorizontalAlignment="Left" Height="37" Margin="588,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" FontSize="20" RenderTransformOrigin="0.566,-0.284"/>
         <Button Content="Connexion" HorizontalAlignment="Left" Margin="460,177,0,0" VerticalAlignment="Top" Width="340" FontSize="20" Height="89"/>
         <GridSplitter HorizontalAlignment="Left" Height="5" Margin="0,302,0,0" VerticalAlignment="Top" Width="830"/>
         <Label Content="Connexion Admin" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
