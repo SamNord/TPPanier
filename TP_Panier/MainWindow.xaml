@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP_Panier"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="1450" Width="850">
+    <Grid Margin="0,0,3.6,-20">
+        <Label Content="Saisie Information Client" HorizontalAlignment="Left" Margin="253,24,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Margin="53,121,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,125,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="232" FontSize="20"/>
+        <Label Content="Prénom :" HorizontalAlignment="Left" Margin="53,181,0,0" VerticalAlignment="Top" FontSize="20" Width="98"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,185,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="232" FontSize="20"/>
+        <Label Content="Téléphone :" HorizontalAlignment="Left" Margin="53,241,0,0" VerticalAlignment="Top" FontSize="20" Width="126"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="184,245,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="232" FontSize="20"/>
+        <Button Content="Ajouter Client" HorizontalAlignment="Left" Margin="506,122,0,0" VerticalAlignment="Top" Width="243" FontSize="20"/>
+        <Button Content="Rechercher Client Test" HorizontalAlignment="Left" Margin="506,170,0,0" VerticalAlignment="Top" Width="243" FontSize="20"/>
+        <ListBox HorizontalAlignment="Left" Height="63" Margin="506,229,0,0" VerticalAlignment="Top" Width="243"/>
+
+        <Label Content="Liste Produits" HorizontalAlignment="Left" Margin="323,336,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="bold" Width="202"/>
+        <Label Content="Produit" HorizontalAlignment="Left" Margin="117,422,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Ajouter Produit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="169" Margin="253,425,0,0" FontSize="20"/>
+        <Button Content="Rechercher Produit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="231" Margin="470,425,0,0" FontSize="20"/>
+        <ListView HorizontalAlignment="Left" Height="176" Margin="40,480,0,0" VerticalAlignment="Top" Width="753">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Label" Width="350" />
+                    <GridViewColumn Header="Prix" Width="350"/>
+
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Content="Panier du Client" HorizontalAlignment="Left" Margin="291,705,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="bold"/>
+        <ListView HorizontalAlignment="Left" Height="176" Margin="40,782,0,0" VerticalAlignment="Top" Width="753">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Label" Width="250" />
+                    <GridViewColumn Header="Prix" Width="250"/>
+                    <GridViewColumn Header="Quantité" Width="250"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Valider Commande" HorizontalAlignment="Left" Margin="291,997,0,0" VerticalAlignment="Top" Width="234" FontSize="20" Click="Button_Click"/>
+
+
+
     </Grid>
 </Window>
