@@ -72,9 +72,13 @@
     </ApplicationDefinition>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Panier.cs" />
+    <Compile Include="ViewModels\AccueilViewModel.cs" />
     <Compile Include="ViewModels\AddProductView.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\AccueilView.xaml.cs">
+      <DependentUpon>AccueilView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddProduct.xaml.cs">
       <DependentUpon>AddProduct.xaml</DependentUpon>
     </Compile>
@@ -93,6 +97,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AccueilView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
