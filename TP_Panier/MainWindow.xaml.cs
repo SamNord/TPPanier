@@ -92,7 +92,7 @@ namespace TP_Panier
             else
             {
                 MessageBox.Show("produit non  trouvé");
-
+                main.Produit = new Product();
             }
         }
 
