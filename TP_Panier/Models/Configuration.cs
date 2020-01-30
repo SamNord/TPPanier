@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace TP_Panier.Models
 {
-    class Configuration
+
+    public class Configuration
+
     {
         public static SqlConnection connection = new SqlConnection(@"Data Source=(LocalDb)\TP_Panier;Integrated Security=True");
     }
