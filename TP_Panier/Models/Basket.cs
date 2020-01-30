@@ -26,7 +26,7 @@ namespace TP_Panier.Models
             Products = new List<Product>();
           
         }
-
+        
         public void Save()
         {
             total = 0;
