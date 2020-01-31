@@ -25,6 +25,7 @@ namespace TP_Panier.ViewModels
             panier = new Basket();
             customer = new Customer();
             ListProductPanier = new ObservableCollection<Product>();
+            RaisePropertyChanged("ListProductPanier");
         }
 
         public int IdCusto { get => customer.Id; set { customer.Id = value; RaisePropertyChanged(); } }
@@ -88,6 +89,8 @@ namespace TP_Panier.ViewModels
             return res;
         }
 
+        public Product ProductSelected { get => produit; set => produit = value; }
+
         //public string ShowMessenger(string message)
         //{
         //    message = Message;
@@ -104,7 +107,36 @@ namespace TP_Panier.ViewModels
             command.ExecuteNonQuery();
             command.Dispose();
             Configuration.connection.Close();
+        }
 
+        public bool DeleteProduct()
+        {
+            bool res = false;
+            if (ProductSelected.Delete())
+            {
+                res = true;
+                RaisePropertyChanged("ProductSelected");
+                RaisePropertyChanged("ListProductPanier");
+            }
+            return res;
+        }
+
+        public void SeeAllProduct()
+        {
+            ListProductPanier = AfficherListePanier();
+            RaisePropertyChanged("ListProductPanier");
+        }
+
+        private ObservableCollection<Product> AfficherListePanier()
+        {
+            foreach(Product p in ListProductPanier)
+            {
+                IdProduit = p.Id;
+                Label = p.Label;
+                Price = p.Price;
+            }
+            RaisePropertyChanged("ListProductPanier");
+            return ListProductPanier;
         }
     }
 }

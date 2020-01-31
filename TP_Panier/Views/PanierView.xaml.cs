@@ -72,5 +72,20 @@ namespace TP_Panier.Views
             main.Show();
             this.Close();
         }
+
+        private void DeleteProductSelected(object sender, RoutedEventArgs e)
+        {
+            PanierViewModel panierWindow = DataContext as PanierViewModel;
+            if (panierWindow.DeleteProduct())
+            {
+                MessageBox.Show("Produit supprimé");
+                panierWindow.SeeAllProduct();
+            }
+            else
+            {
+                MessageBox.Show("Erreur inconnue");
+
+            }
+        }
     }
 }

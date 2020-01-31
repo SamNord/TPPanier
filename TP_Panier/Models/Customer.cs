@@ -128,10 +128,7 @@ namespace TP_Panier.Models
 
         public override string ToString()
         {
-            return $"Nom : {Lastname}, Prénom : {Firstname}, Téléphone : {PhoneNumber}";
+            return $"Nom : {Lastname}, Prénom : {Firstname}";
         }
-
-
-
     }
 }
