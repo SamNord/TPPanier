@@ -90,8 +90,26 @@ namespace TP_Panier
         {
             MainViewModel main = DataContext as MainViewModel;
             main.Customer = Customer.GetCustomerById(main.Customer.Id);
-            PanierView panierWindow = new PanierView(main.Customer);
-            panierWindow.Show();
+            if(main.Customer != null)
+            {
+                PanierView panierWindow = new PanierView(main.Customer);
+                panierWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                if(champsId.Text == "")
+                {
+                    
+                    MessageBox.Show("Veuillez entrez votre identifiant.");
+                    main.Customer = new Customer();
+                }
+                else
+                {
+                    MessageBox.Show("Client non existant");
+                    main.Customer = new Customer();
+                }                
+            }        
         }
 
         private void AddProductInBDD(object sender, RoutedEventArgs e)
@@ -104,17 +122,27 @@ namespace TP_Panier
         private void ConnectingAdmin(object sender, RoutedEventArgs e)
         {
             MainViewModel main = DataContext as MainViewModel;
-            if(main.IdentifiantAdmin == "killerTeam" && main.PassAdmin == "admin")
+            if (main.IdentifiantAdmin == "admin" && main.PassAdmin == "admin")
             {
 
                 AddProduct addProductWindow = new AddProduct();
                 addProductWindow.Show();
+                this.Close();
             }
 
-            else
+            else if (main.IdentifiantAdmin == null || main.PassAdmin == null)
+            {
+
+                MessageBox.Show("Veuillez renseignez le ou les champs");
+            }
+
+            else 
             {
                 MessageBox.Show("T'as pas le droit ! Pas bien !");
-            }
+                NoAccess noWindow = new NoAccess();
+                noWindow.Show();
+            }  
+           
         }
 
         /***********************Réinitialisation des tables*************
@@ -156,6 +184,9 @@ namespace TP_Panier
             Configuration.connection.Close();
         }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

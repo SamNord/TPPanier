@@ -9,8 +9,8 @@
     <Grid Margin="0,0,0,-8" Background="Beige">
         <Label Content="Numero produit :" HorizontalAlignment="Left" Margin="230,108,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBox Text="{Binding IdProduit}" HorizontalAlignment="Left" Height="23" Margin="355,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.944,0.696"/>
-        <Button Content="Search" Click="SearchProduct" HorizontalAlignment="Left" Margin="435,105,0,0" VerticalAlignment="Top" Width="95" Height="26"/>
-        <Button Click="AddInBasket" Content="Ajouter dans panier" HorizontalAlignment="Left" Margin="600,180,0,0" VerticalAlignment="Top" Width="150" Height="26"/>
+        <Button Content="Search" Click="SearchProduct" HorizontalAlignment="Left" Background="Brown" Foreground="White" FontSize="17" FontWeight="Bold" Margin="435,105,0,0" VerticalAlignment="Top" Width="110" Height="29"/>
+        <Button Click="AddInBasket" Content="Ajouter dans panier" Background="DarkCyan" Foreground="Wheat" FontSize="15" HorizontalAlignment="Left" Margin="580,160,0,0" VerticalAlignment="Top" Width="170" Height="46"/>
         <DataGrid ItemsSource="{Binding ListProductPanier}"  AutoGenerateColumns="False" HorizontalAlignment="Left" Height="117" Margin="250,240,0,0" VerticalAlignment="Top" Width="520">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="130" Header="Numéro Produit" Binding="{Binding IdProduit}"/>
@@ -18,13 +18,14 @@
                 <DataGridTextColumn Width="150" Header="Prix" Binding="{Binding Price}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Valider" Click="ValiderPanier" HorizontalAlignment="Left" Margin="625,444,0,0" VerticalAlignment="Top" Width="145" Height="26"/>
+        <Button Content="Valider" Click="ValiderPanier" Background="Blue" Foreground="Wheat" FontSize="27" FontWeight="Bold" HorizontalAlignment="Left" Margin="550,444,0,0" VerticalAlignment="Top" Width="220" Height="51"/>
         <Label Content="{Binding Produit}" HorizontalAlignment="Left" Margin="40,160,0,0" VerticalAlignment="Top" Width="505" Height="46" Background="AliceBlue"/>
         <Label Content="Total : " HorizontalAlignment="Left" Margin="625,376,0,0" VerticalAlignment="Top" Width="55" Height="26" Background="Beige" RenderTransformOrigin="1.087,0.8"/>
         <TextBox Text="{Binding IdCusto}" HorizontalAlignment="Left" Height="23" Margin="150,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.944,0.696"/>
         <Label Content="Numero client :" HorizontalAlignment="Left" Margin="15,59,0,0" VerticalAlignment="Top" Width="100"/>
         <Label Content="{Binding Total}" HorizontalAlignment="Left" Margin="715,376,0,0" VerticalAlignment="Top" Width="55" Height="26" Background="White" RenderTransformOrigin="1.087,0.8"/>
-        <Label Content="{Binding Lastname}" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Width="135" Height="30"/>
-        <Label Content="{Binding Firstname}" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="155" Height="30"/>
+        <Label Content="{Binding Lastname}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Width="135" Height="30"/>
+        <Label Content="{Binding Firstname}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="155" Height="30"/>
+        <Button Click="Quitter" Content="Quitter" Background="Black" Foreground="Red" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="15,535,0,0" VerticalAlignment="Top" Width="125" Height="40"/>
     </Grid>
 </Window>

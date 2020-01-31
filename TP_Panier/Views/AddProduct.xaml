@@ -12,7 +12,6 @@
         <Label Content="Prix" HorizontalAlignment="Left" Margin="320,85,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
         <TextBox Text="{Binding Price}" HorizontalAlignment="Left" Height="35" Margin="395,80,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Button Background="Brown" Foreground="White" FontSize="15" FontWeight="Bold" Content="Ajouter" HorizontalAlignment="Left" Margin="570,79,0,0" VerticalAlignment="Top" Width="145" Height="35" Click="AjouterProduct"/>
-        <Button Content="Réinitialisation table produit" Background="Red" HorizontalAlignment="Left" Margin="570,441,0,0" VerticalAlignment="Top" Width="200" Click="DeleteTableProduit"/>
         <Label Content="Ajouter un produit" Foreground="Brown" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="295"/>
         <Label Content="Liste des produits" Foreground="Brown" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="295"/>
         <ListView ItemsSource="{Binding ListProducts}" SelectedItem = "{Binding ProductSelected}"  HorizontalAlignment="Left" Height="155" Margin="30,255,0,0" VerticalAlignment="Top" Width="400">
@@ -26,6 +25,8 @@
         </ListView>
         <Button Click="UpdateProductSelected" Content="Modifier" Background="CadetBlue" Foreground="White" FontSize="13" FontWeight="Bold" Margin="465,280,227,0" VerticalAlignment="Top" RenderTransformOrigin="0.133,0.85" Height="30"/>
         <Button Click="DeleteProductSelected" Content="Supprimer" Background="Red" Foreground="White" FontSize="13" FontWeight="Bold" Margin="465,355,227,0" VerticalAlignment="Top" RenderTransformOrigin="0.133,0.85" Height="30"/>
+        <Button Click="Quitter" Content="Quitter" Background="Beige" Foreground="Black" HorizontalAlignment="Left" Margin="675,12,0,0" VerticalAlignment="Top" Width="90" Height="26"/>
+        <Button Content="DeleteBDD" HorizontalAlignment="Left" Background="Beige" Foreground="DarkRed" Margin="675,441,0,0" VerticalAlignment="Top" Width="90" Click="DeleteBDD"/>
 
     </Grid>
 </Window>

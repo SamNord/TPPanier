@@ -65,5 +65,12 @@ namespace TP_Panier.Views
                 MessageBox.Show("erreur");
             }
         }
+
+        private void Quitter(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
     }
 }

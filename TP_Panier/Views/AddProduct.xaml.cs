@@ -42,7 +42,7 @@ namespace TP_Panier.Views
         private void DeleteProductSelected(object sender, RoutedEventArgs e)
         {
             AddProductView v = DataContext as AddProductView;
-            if(v.DeleteProduct())
+            if (v.DeleteProduct())
             {
                 MessageBox.Show("Produit supprimé");
                 v.SeeAllProduct();
@@ -63,13 +63,19 @@ namespace TP_Panier.Views
             //MessageBox.Show($"Label : {v.ProductSelected.Label}, Prix : {v.ProductSelected.Price}€");
         }
 
-        //bouton de réinitialisation de la table produit
-        private void DeleteTableProduit(object sender, RoutedEventArgs e)
+        private void Quitter(object sender, RoutedEventArgs e)
         {
-            Product.ReinitialisationTableProduit();
-            MessageBox.Show("table produit réinitialisée");
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
         }
 
-
+        //renvoit une nouvelle fenêtre qui sert à réinitialiser la BDD
+        private void DeleteBDD(object sender, RoutedEventArgs e)
+        {
+            DeleteTableView deleteWindow = new DeleteTableView();
+            deleteWindow.Show();
+            this.Close();
+        }
     }
 }

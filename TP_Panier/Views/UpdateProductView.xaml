@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:TP_Panier.Views"
         mc:Ignorable="d"
         Title="UpdateProductView" Height="450" Width="800">
-    <Grid>
-        <Label Content="Modifier produit" Foreground="Brown" FontSize="31" FontWeight="Bold" HorizontalAlignment="Left" Margin="235,30,0,0" VerticalAlignment="Top" Width="310" Height="57"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="143,115,0,0" VerticalAlignment="Top" Width="155" Height="45"/>
-        <TextBox x:Name="label" Text="{Binding LabelEdit}" HorizontalAlignment="Left" Height="45" Margin="355,115,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"/>
-        <Label Content="Prix" HorizontalAlignment="Left" Margin="143,195,0,0" VerticalAlignment="Top" Width="155" Height="45"/>
-        <TextBox x:Name="prix" Text="{Binding PrixEdit}" HorizontalAlignment="Left" Height="45" Margin="355,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169"/>
-        <Button Click="UpdateProduct"  Content="Modifier" Background="Blue" Foreground="White" FontSize="13" FontWeight="Bold" HorizontalAlignment="Left" Margin="205,280,0,0" VerticalAlignment="Top" Width="319" RenderTransformOrigin="0.133,0.85" Height="45"/>
+    <Grid Background="Black">
+        <Label Content="Modifier un produit" Foreground="Wheat" FontSize="31" FontWeight="Bold" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Width="310" Height="57"/>
+        <Label Content="Label" Foreground="White" FontSize="27" FontWeight="Bold" HorizontalAlignment="Left" Margin="190,95,0,0" VerticalAlignment="Top" Width="100" Height="45"/>
+        <TextBox x:Name="label" Text="{Binding LabelEdit}" Foreground="Black" FontSize="21" FontWeight="Bold" HorizontalAlignment="Left" Height="45" Margin="316,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="234"/>
+        <Label Content="Prix" Foreground="White" FontSize="27" FontWeight="Bold" HorizontalAlignment="Left" Margin="190,195,0,0" VerticalAlignment="Top" Width="70" Height="45"/>
+        <TextBox x:Name="prix" Text="{Binding PrixEdit}" HorizontalAlignment="Left" Height="45" Margin="316,195,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="234"/>
+        <Button Click="UpdateProduct"  Content="Modifier" Background="Black" Foreground="Cyan" FontSize="27" FontWeight="Bold" HorizontalAlignment="Left" Margin="190,290,0,0" VerticalAlignment="Top" Width="360" RenderTransformOrigin="0.133,0.85" Height="55"/>
+        <Button Content="Quitter" Background="Black" Foreground="Red" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="660,360,0,0" VerticalAlignment="Top" Width="90" Height="35"/>
 
     </Grid>
 </Window>

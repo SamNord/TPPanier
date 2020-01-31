@@ -27,19 +27,19 @@ namespace TP_Panier.ViewModels
             ListProductPanier = new ObservableCollection<Product>();
         }
 
-        public int IdCusto { get => customer.Id; set => customer.Id = value; }
-        public string Lastname { get => customer.Lastname; set => customer.Lastname = value; }
-        public string Firstname { get => customer.Firstname; set => customer.Firstname = value; }
-        public string Phone { get => customer.PhoneNumber; set => customer.PhoneNumber = value; }
-        public Customer Customer { get => customer; set => customer = value; }
+        public int IdCusto { get => customer.Id; set { customer.Id = value; RaisePropertyChanged(); } }
+        public string Lastname { get => customer.Lastname; set { customer.Lastname = value; RaisePropertyChanged(); } }
+        public string Firstname { get => customer.Firstname; set { customer.Firstname = value; RaisePropertyChanged(); } }
+        public string Phone { get => customer.PhoneNumber; set { customer.PhoneNumber = value; RaisePropertyChanged(); } }
+        public Customer Customer { get => customer; set { customer = value; RaisePropertyChanged(); } }
 
-        public int IdProduit { get => produit.Id; set => produit.Id = value; }
-        public string Label { get => produit.Label; set => produit.Label = value; }
-        public decimal Price { get => produit.Price; set => produit.Price = value; }
+        public int IdProduit { get => produit.Id; set { produit.Id = value; RaisePropertyChanged(); } }
+        public string Label { get => produit.Label; set { produit.Label = value; RaisePropertyChanged(); } }
+        public decimal Price { get => produit.Price; set { produit.Price = value; RaisePropertyChanged(); } }
         public Product Produit { get => produit; set { produit = value; RaisePropertyChanged(); } }
 
         public Basket Panier { get => panier; set { panier = value; RaisePropertyChanged(); } }
-        public int IdPanier { get => panier.Id; set => panier.Id = value; }
+        public int IdPanier { get => panier.Id; set { panier.Id = value; RaisePropertyChanged(); } }
 
         public decimal Total
         {
