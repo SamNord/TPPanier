@@ -24,8 +24,8 @@
         <TextBox Text="{Binding IdCusto}" HorizontalAlignment="Left" Height="23" Margin="150,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.944,0.696"/>
         <Label Content="Numero client :" HorizontalAlignment="Left" Margin="15,59,0,0" VerticalAlignment="Top" Width="100"/>
         <Label Content="{Binding Total}" HorizontalAlignment="Left" Margin="715,376,0,0" VerticalAlignment="Top" Width="55" Height="26" Background="White" RenderTransformOrigin="1.087,0.8"/>
-        <Label Content="{Binding Lastname}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Width="135" Height="30"/>
-        <Label Content="{Binding Firstname}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="155" Height="30"/>
+        <Label Content="{Binding Customer}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="15,4,0,0" VerticalAlignment="Top" Width="390" Height="50"/>
+        <!--<Label Content="{Binding Firstname}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="170,4,0,0" VerticalAlignment="Top" Width="170" Height="50"/>-->
         <Button Click="Quitter" Content="Quitter" Background="Black" Foreground="Red" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="15,535,0,0" VerticalAlignment="Top" Width="125" Height="40"/>
     </Grid>
 </Window>
