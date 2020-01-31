@@ -25,8 +25,8 @@
         </ListView>
         <Button Click="UpdateProductSelected" Content="Modifier" Background="CadetBlue" Foreground="White" FontSize="13" FontWeight="Bold" Margin="465,280,227,0" VerticalAlignment="Top" RenderTransformOrigin="0.133,0.85" Height="30"/>
         <Button Click="DeleteProductSelected" Content="Supprimer" Background="Red" Foreground="White" FontSize="13" FontWeight="Bold" Margin="465,355,227,0" VerticalAlignment="Top" RenderTransformOrigin="0.133,0.85" Height="30"/>
-        <Button Click="Quitter" Content="Quitter" Background="Beige" Foreground="Black" HorizontalAlignment="Left" Margin="675,12,0,0" VerticalAlignment="Top" Width="90" Height="26"/>
-        <Button Content="DeleteBDD" HorizontalAlignment="Left" Background="Beige" Foreground="DarkRed" Margin="675,441,0,0" VerticalAlignment="Top" Width="90" Click="DeleteBDD"/>
+        <Button Click="Quitter" Content="Quitter" Background="DarkBlue" Foreground="White" HorizontalAlignment="Left" Margin="675,12,0,0" VerticalAlignment="Top" Width="90" Height="26"/>
+        <Button Content="DeleteBDD" HorizontalAlignment="Left" Background="Black" Foreground="Red" Margin="675,441,0,0" VerticalAlignment="Top" Width="90" Click="DeleteBDD"/>
 
     </Grid>
 </Window>
