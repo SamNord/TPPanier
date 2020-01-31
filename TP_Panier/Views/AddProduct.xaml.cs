@@ -31,10 +31,14 @@ namespace TP_Panier.Views
         private void AjouterProduct(object sender, RoutedEventArgs e)
         {
             AddProductView v = DataContext as AddProductView;
-            if (v.Produit.Save())
+            if (v.AddProductInBDD())
             {
-                MessageBox.Show("produit ajouté avec numéro " + v.Produit.Id);
+                MessageBox.Show("produit ajouté");
                 v.SeeAllProduct();
+            }
+            else
+            {
+                MessageBox.Show("erreur");
             }
 
         }

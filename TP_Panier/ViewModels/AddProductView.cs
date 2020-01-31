@@ -46,5 +46,21 @@ namespace TP_Panier.ViewModels
             }
             return res;
         }
+
+        public bool AddProductInBDD()
+        {
+            bool res = false;
+            if(Produit.Save())
+            {
+                res = true;
+                Produit = new Product();
+                RaisePropertyChanged("Produit");
+                RaisePropertyChanged("Label");
+                RaisePropertyChanged("Price");
+
+            }
+
+            return res;
+        }
     }
 }
