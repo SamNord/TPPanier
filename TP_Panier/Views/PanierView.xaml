@@ -27,5 +27,6 @@
         <Label Content="{Binding Lastname}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Width="135" Height="30"/>
         <Label Content="{Binding Firstname}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="155" Height="30"/>
         <Button Click="Quitter" Content="Quitter" Background="Black" Foreground="Red" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="15,535,0,0" VerticalAlignment="Top" Width="125" Height="40"/>
+        <Label Content="{Binding Message}" HorizontalAlignment="Left" Margin="15,415,0,0" VerticalAlignment="Top" Width="430" Height="46" Background="AliceBlue" Foreground="Brown" FontSize="21" FontWeight="Bold"/>
     </Grid>
 </Window>
