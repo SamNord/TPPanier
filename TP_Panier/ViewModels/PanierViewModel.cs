@@ -85,6 +85,10 @@ namespace TP_Panier.ViewModels
                 SaveInPanierProduit();
                 RaisePropertyChanged("Panier");
                 message = $"Commande n° {panier.Id}, Total :  {panier.Total}€ ";
+                panier = new Basket();
+                ListProductPanier = new ObservableCollection<Product>();
+                c = new Customer();
+               
             }
             else
             {
