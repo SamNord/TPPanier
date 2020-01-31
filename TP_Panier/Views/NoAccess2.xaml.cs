@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,26 +15,26 @@ using System.Windows.Shapes;
 namespace TP_Panier.Views
 {
     /// <summary>
-    /// Logique d'interaction pour NoAccess.xaml
+    /// Logique d'interaction pour NoAccess2.xaml
     /// </summary>
-    public partial class NoAccess : Window
+    public partial class NoAccess2 : Window
     {
-        public NoAccess()
+        public NoAccess2()
         {
             InitializeComponent();
-            AfficherImg();
+            AffImg();
         }
 
-        private void AfficherImg()
-        {               
-            string destinPath = @"c:\Users\PC_DellPro\Desktop\PROJET\Cours-session2\TPCSharp-Session2\PanierTP\TPPanier\TP_Panier\Image\chat1.jpg";
-            //File.Copy(path, destinPath);
+        private void AffImg()
+        {
+            string destinPath = @"c:\Users\PC_DellPro\Desktop\PROJET\Cours-session2\TPCSharp-Session2\PanierTP\TPPanier\TP_Panier\Image\chat2.jpg";
             BitmapImage imageSource = new BitmapImage();
             imageSource.BeginInit();
-            imageSource.UriSource = new Uri(destinPath, UriKind.Absolute);          
+            imageSource.UriSource = new Uri(destinPath, UriKind.Absolute);
             ImageBrush fond = new ImageBrush(imageSource);
             this.Background = fond;
             imageSource.EndInit();
         }
+
     }
 }

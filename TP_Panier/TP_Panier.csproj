@@ -89,6 +89,9 @@
     <Compile Include="Views\NoAccess.xaml.cs">
       <DependentUpon>NoAccess.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\NoAccess2.xaml.cs">
+      <DependentUpon>NoAccess2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PanierView.xaml.cs">
       <DependentUpon>PanierView.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\NoAccess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NoAccess2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,7 +168,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\chat2.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\chat1.jpg" />
   </ItemGroup>

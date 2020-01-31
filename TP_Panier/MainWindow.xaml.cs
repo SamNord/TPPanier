@@ -48,20 +48,6 @@ namespace TP_Panier
             }
         }
 
-        //private void AddClient(object sender, RoutedEventArgs e)
-        //{
-        //    MainViewModel main = DataContext as MainViewModel;
-        //    if (main.Customer.Save())
-        //    {
-        //        MessageBox.Show("client ajouté avec le numéro " + main.Customer.Id);
-        //    }
-        //}
-
-        private void SearchClient(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void AddInBasket(object sender, RoutedEventArgs e)
         {
             MainViewModel main = DataContext as MainViewModel;
@@ -108,6 +94,8 @@ namespace TP_Panier
                 {
                     MessageBox.Show("Client non existant");
                     main.Customer = new Customer();
+                    NoAccess2 nowindow = new NoAccess2();
+                    nowindow.Show();
                 }                
             }        
         }
