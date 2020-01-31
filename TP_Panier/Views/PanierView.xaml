@@ -28,5 +28,6 @@
         <!--<Label Content="{Binding Firstname}" FontSize="21" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Left" Margin="170,4,0,0" VerticalAlignment="Top" Width="170" Height="50"/>-->
         <Button Click="Quitter" Content="Quitter" Background="Black" Foreground="Red" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" Margin="15,535,0,0" VerticalAlignment="Top" Width="125" Height="40"/>
         <Button Content="Supprimer" Click="DeleteProductSelected" HorizontalAlignment="Left" Background="Red" Foreground="White" FontSize="17" FontWeight="Bold" Margin="40,281,0,0" VerticalAlignment="Top" Width="145" Height="44"/>
+        <Label Content="{Binding Message}" HorizontalAlignment="Left" Margin="15,415,0,0" VerticalAlignment="Top" Width="430" Height="46" Background="AliceBlue" Foreground="Brown" FontSize="21" FontWeight="Bold"/>
     </Grid>
 </Window>

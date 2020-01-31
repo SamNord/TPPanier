@@ -17,7 +17,7 @@ namespace TP_Panier.ViewModels
         private Customer customer;
         private ObservableCollection<Product> listProductPanier;
         public static SqlCommand command;
-
+        private string message;
 
         public PanierViewModel()
         {
@@ -84,19 +84,22 @@ namespace TP_Panier.ViewModels
                 res = true;
                 SaveInPanierProduit();
                 RaisePropertyChanged("Panier");
+                message = "Votre facture : " + panier.Total + "€";
             }
-
+            else
+            {
+                message = "erreur";
+            }
+            RaisePropertyChanged("Message");
             return res;
         }
 
         public Product ProductSelected { get => produit; set => produit = value; }
 
-        //public string ShowMessenger(string message)
-        //{
-        //    message = Message;
-        //    RaisePropertyChanged("Message");
-        //    return message;
-        //}
+        public string Message
+        {
+            get => message;
+        }
 
         public void SaveInPanierProduit()
         {

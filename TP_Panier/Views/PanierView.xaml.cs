@@ -55,15 +55,15 @@ namespace TP_Panier.Views
         private void ValiderPanier(object sender, RoutedEventArgs e)
         {
             PanierViewModel panierWindow = DataContext as PanierViewModel;
-
-            if (panierWindow.ValiderPanier())
-            {
-                MessageBox.Show("Total de la commande : " + panierWindow.Panier.Total + "€");
-            }
-            else
-            {
-                MessageBox.Show("erreur");
-            }
+            panierWindow.ValiderPanier();
+            //if (panierWindow.ValiderPanier())
+            //{
+            //    MessageBox.Show("Total de la commande : " + panierWindow.Panier.Total + "€");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("erreur");
+            //}
         }
 
         private void Quitter(object sender, RoutedEventArgs e)
