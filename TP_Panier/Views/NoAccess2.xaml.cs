@@ -27,10 +27,11 @@ namespace TP_Panier.Views
 
         private void AffImg()
         {
-            string destinPath = @"c:\Users\PC_DellPro\Desktop\PROJET\Cours-session2\TPCSharp-Session2\PanierTP\TPPanier\TP_Panier\Image\chat2.jpg";
+            //le chemin de l'image (path) est différent selon les PC, il faudra mettre votre propre chemin de fichier
+            string path = @"C:\Users\Administrateur\Source\Repos\TPPanier\TP_Panier\Image\chat2.jpg";
             BitmapImage imageSource = new BitmapImage();
             imageSource.BeginInit();
-            imageSource.UriSource = new Uri(destinPath, UriKind.Absolute);
+            imageSource.UriSource = new Uri(path, UriKind.Absolute);
             ImageBrush fond = new ImageBrush(imageSource);
             this.Background = fond;
             imageSource.EndInit();
