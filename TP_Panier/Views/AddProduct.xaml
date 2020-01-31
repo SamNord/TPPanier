@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP_Panier.Views"
         mc:Ignorable="d"
-        Title="Ajouter un produit" Height="502" Width="800">
+        Title="Add product" Height="502" Width="800">
     <Grid Background="Beige">
         <Label Content="Label" HorizontalAlignment="Left" Margin="30,85,0,0" VerticalAlignment="Top" Width="110" Height="30"/>
         <TextBox Text="{Binding Label}" HorizontalAlignment="Left" Height="35" Margin="160,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>

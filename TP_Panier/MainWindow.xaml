@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TP_Panier"
         mc:Ignorable="d"
 
-        Title="MainWindow" Height="662.8" Width="850">
+        Title="Accueil" Height="662.8" Width="850">
 
     <Grid Background="Gray" Margin="0,0,3.2,0" Height="691" VerticalAlignment="Top">
         <Label Content="Nouveau client" Foreground="White" HorizontalAlignment="Left" Margin="117,10,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>

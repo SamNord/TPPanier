@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP_Panier.Views"
         mc:Ignorable="d"
-        Title="PanierView" Height="637" Width="839">
+        Title="Commande" Height="637" Width="839">
     <Grid Margin="0,0,0,-8" Background="Beige">
         <Label Content="Numero produit :" HorizontalAlignment="Left" Margin="230,108,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBox Text="{Binding IdProduit}" HorizontalAlignment="Left" Height="23" Margin="355,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.944,0.696"/>

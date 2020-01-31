@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP_Panier.Views"
         mc:Ignorable="d"
-        Title="UpdateProductView" Height="450" Width="800">
+        Title="Update Product" Height="450" Width="800">
     <Grid Background="Black">
         <Label Content="Modifier un produit" Foreground="Wheat" FontSize="31" FontWeight="Bold" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Width="310" Height="57"/>
         <Label Content="Label" Foreground="White" FontSize="27" FontWeight="Bold" HorizontalAlignment="Left" Margin="190,95,0,0" VerticalAlignment="Top" Width="100" Height="45"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP_Panier.Views"
         mc:Ignorable="d"
-        Title="DeleteTableView" Height="450" Width="800">
+        Title="Réinitialisation" Height="450" Width="800">
     <Grid Background="Black">
         <Button Click="DeleteCusto" Content="Supprimer données client" Background="Black" Foreground="Red" FontSize="17" FontWeight="Bold" HorizontalAlignment="Left" Margin="220,90,0,0" VerticalAlignment="Top" Width="315" Height="45"/>
         <Button Click="DeleteProducts" Content="Supprimer données produit" Background="Black" Foreground="Red" FontSize="17" FontWeight="Bold" HorizontalAlignment="Left" Margin="220,165,0,0" VerticalAlignment="Top" Width="315" Height="45"/>
