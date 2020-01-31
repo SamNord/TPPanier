@@ -13,7 +13,7 @@
         <Button Click="AddInBasket" Content="Ajouter dans panier" Background="DarkCyan" Foreground="Wheat" FontSize="15" HorizontalAlignment="Left" Margin="580,160,0,0" VerticalAlignment="Top" Width="170" Height="46"/>
         <DataGrid ItemsSource="{Binding ListProductPanier}" SelectedItem="{Binding ProductSelected}"  AutoGenerateColumns="False" HorizontalAlignment="Left" Height="117" Margin="250,240,0,0" VerticalAlignment="Top" Width="520">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="130" Header="Numéro Produit" Binding="{Binding IdProduit}"/>
+                <DataGridTextColumn Width="130" Header="Numéro Produit" Binding="{Binding Id}"/>
                 <DataGridTextColumn Width="150" Header="Label" Binding="{Binding Label}"/>
                 <DataGridTextColumn Width="150" Header="Prix" Binding="{Binding Price}"/>
             </DataGrid.Columns>
