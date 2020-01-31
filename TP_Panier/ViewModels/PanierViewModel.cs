@@ -84,7 +84,7 @@ namespace TP_Panier.ViewModels
                 res = true;
                 SaveInPanierProduit();
                 RaisePropertyChanged("Panier");
-                message = "Votre facture : " + panier.Total + "€";
+                message = $"Commande n° {panier.Id}, Total :  {panier.Total}€ ";
             }
             else
             {
