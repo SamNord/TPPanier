@@ -77,18 +77,18 @@ namespace TP_Panier.ViewModels
             {
                 Id = IdPanier,
                 CustomerId = IdCusto,
-                Total = Total
+                Total = Total,
+                Products = ListProductPanier
             };
-            if (panier.Save2())
+            if (panier.Save())
             {
                 res = true;
-                SaveInPanierProduit();
+               
                 RaisePropertyChanged("Panier");
                 message = $"Commande n° {panier.Id}, Total :  {panier.Total}€ ";
                 panier = new Basket();
                 ListProductPanier = new ObservableCollection<Product>();
-                c = new Customer();
-               
+                c = new Customer();          
             }
             else
             {

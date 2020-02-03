@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,28 +15,33 @@ namespace TP_Panier.Models
         private int id;
         private decimal total;
         private int customerId;
-        private List<Product> products;
+        private ObservableCollection<Product> products;
         public static SqlCommand command;
         public static SqlDataReader reader;
 
         public int Id { get => id; set => id = value; }
         public decimal Total { get => total; set => total = value; }
-        public List<Product> Products { get => products; set => products = value; }
+        public ObservableCollection<Product> Products { get => products; set => products = value; }
 
         public int CustomerId { get => customerId; set => customerId = value; }
 
         public Basket()
         {
-            Products = new List<Product>();
+            Products = new ObservableCollection<Product>();
         }
 
-        public void Save()
+        public bool Save()
         {
+            bool res = false;
             total = 0;
-            Products.ForEach(product =>
+            //Products.ForEach(product =>
+            //{
+            //    total += product.Price;
+            //});
+            foreach(Product p in Products )
             {
-                total += product.Price;
-            });
+                total += p.Price;
+            }
             command = new SqlCommand("INSERT INTO Panier (client_id, total) OUTPUT INSERTED.ID values(@client_id, @total)", Configuration.connection);
             command.Parameters.Add(new SqlParameter("@client_id", CustomerId));
             command.Parameters.Add(new SqlParameter("@total", Total));
@@ -44,16 +50,22 @@ namespace TP_Panier.Models
             if (Id > 0)
             {
                 command.Dispose();
-                Products.ForEach(product =>
+           
+                foreach(Product prod in Products)
                 {
                     command = new SqlCommand("INSERT INTO PanierProduit (produit_id, panier_id) values(@produitId, @panierId)", Configuration.connection);
-                    command.Parameters.Add(new SqlParameter("@produitId", product.Id));
+                    command.Parameters.Add(new SqlParameter("@produitId", prod.Id));
                     command.Parameters.Add(new SqlParameter("@panierId", Id));
-                    command.ExecuteNonQuery();
+                    if (command.ExecuteNonQuery() > 0)
+                    {
+                        res = true;
+                    }
                     command.Dispose();
-                });
+
+                }
             }
             Configuration.connection.Close();
+            return res;
         }
 
 
